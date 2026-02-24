@@ -1,8 +1,12 @@
 const express = require("express"); //importing express
 const dotenv = require("dotenv");
+const connectDB = require("./config/db");
 
-const app = express(); //created instance of this express variable.
 dotenv.config();
+
+connectDB(); 
+const app = express(); //created instance of this express variable.
+
 
 app.get("/", (req, res) => {
   res.send("API is running successfully.");
